@@ -1,0 +1,527 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif; /* Change to 'Poppins' if preferred */
+    background: linear-gradient(to bottom, #0f0f1a, #13132b);
+    color: white;
+    text-align: center;
+    padding-top: 80px; /* Prevents content from being overlapped by navbar */
+}
+
+/* Sticky Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000000; /* Fully opaque black */
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+
+/* Clickable MEEMARC Logo */
+.logo, .logo:visited, .logo:hover, .logo:focus {
+    font-size: 24px;
+    font-weight: 700;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Remove outline when clicked */
+.logo:focus {
+    outline: none;
+}
+
+/* Navigation Bar */
+.nav-icons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Navigation Items */
+.nav-item {
+    position: relative;
+    background: #000000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Ensures text alignment */
+}
+
+/* Hover Effect */
+.nav-item:hover {
+    background: rgba(20, 20, 20, 1);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Icon Styling */
+.nav-item i {
+    color: white;
+    font-size: 24px; /* Adjust icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensures full width inside the button */
+    height: 100%; /* Ensures full height inside the button */
+}
+
+/* Tooltip Effect */
+.nav-item::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+/* Show Tooltip on Hover After 1 Second */
+.nav-item:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hero Section */
+.hero {
+    font-size: 42px;
+    font-weight: 700;
+    margin-top: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtext {
+    font-size: 18px;
+    display: block;
+    margin-top: 10px;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+/* About Section */
+#about {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    margin: 400px auto; /* Increase this value to push it lower */
+    height: 10%;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+
+    text-align: justify;
+
+    
+}
+
+#about h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #00bfff; /* Light Blue Highlight */
+}
+
+#about p {
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+.emoji {
+    font-size: 50px;
+    margin-bottom: 10px;
+    display: inline-block;
+    animation: float 3s infinite ease-in-out; /* Slower, smoother effect */
+}
+
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.content-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 50px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Services Section */
+#services {
+
+    scroll-margin-top: 70px; /* Adjusts scroll position when navigated */
+    padding: 100px 20px; /* Adjust padding for spacing */
+}
+
+
+#services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #00bfff; /* Light blue accent */
+}
+
+/* Service Boxes */
+.service-box {  
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.service-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.service-text {
+    text-align: left;
+}
+
+.service-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.service-text p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .service-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    .service-box img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.service-icon {
+    font-size: 60px;
+    color: #00bfff; /* Light blue accent */
+    margin-right: 20px;
+}
+
+.service-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.service-text {
+    text-align: left;
+}
+
+.service-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.service-text p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .service-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    .service-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* About Section */
+#about {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 10px auto; /* Increased top margin to move the section lower */
+    width: 80%;
+    border-radius: 10px;
+}
+
+/* About Section Layout */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 75px;
+    text-align: center;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-item img {
+    width: 75px;
+    height: 95px;
+    object-fit: contain;
+}
+
+.skill-item span {
+    margin-top: -5px;
+    font-size: 18px;
+}
+
+/* About Text */
+.about-text {
+    font-size: 20px;
+    max-width: 50%;
+    text-align: justify;    
+}
+
+.spacer {
+    height: 250px; /* Adjust the height to move the About section down */
+}
+
+/* Sections - Initially Hidden */
+.hidden-section {
+    opacity: 0; /* Start Hidden */
+    transform: translateY(50px); /* Shift Down */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Show Sections After Scrolling */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Sections - Initially Hidden */
+.hidden-section {
+    opacity: 0; /* Start Hidden */
+    transform: translateY(50px); /* Shift Down */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Show Sections After Scrolling */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.profile-info span {
+    font-size: 0.9em;
+    color: gray;
+}
+
+.projects-gallery {
+    display: flex;
+    gap: 50px;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.project-item {
+     color: #00bfff; /* Light Blue Highlight */
+    font-size: 18px; /* Adjust size if needed */
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.project-item img {
+    width: 300px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Sample Projects Heading */
+#projects h2 {
+    font-size: 32px;
+    color: #00bfff; /* Light Blue */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Project Items */
+.project-item {
+    color: #00bfff; /* Change project names to white */
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#contact {
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+#contact h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+input, textarea {
+    width: 48%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#services:target {
+    margin-top: -50px; /* Moves it closer to the hero */
+    padding-top: 50px; /* Ensures content isn't cut off */
+}
+
+.hero-image {
+    margin-top: 30px; /* Space between punch line and image */
+    text-align: center;
+}
+
+.hero-image img {
+    width: 200px; /* Adjust as needed */
+    height: auto;
+    border-radius: 10px; /* Optional: For soft corners */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Optional: Glow effect */
+}
+
+i {
+    font-size: 24px; /* Adjust icon size */
+    color: white; /* Ensure icon visibility */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.projects-gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-item {
+    width: 250px;
+    text-align: center;
+    background-color: #1a1a1a; /* Optional: Background */
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px; /* Consistent height */
+    object-fit: contain; /* Ensures full image visibility without cropping */
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.project-item p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #00AEEF;
+    text-align: center;
+}

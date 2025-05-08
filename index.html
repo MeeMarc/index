@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEEMARC</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <a href="#" class="logo">MEEMARC</a>
+        <nav class="nav-icons">
+            <div class="nav-item" data-tooltip="Home">
+                <a href="#"><i class="fas fa-home"></i></a>
+            </div>
+            <div class="nav-item" data-tooltip="About">
+                <a href="#about"><i class="fas fa-address-card"></i></a>
+            </div>
+            <div class="nav-item" data-tooltip="Services">
+                <a href="#services"><i class="fas fa-user-cog"></i></a>
+            </div>
+            
+            
+            
+            <div class="nav-item" data-tooltip="Projects">
+                <a href="#projects"><i class="fas fa-folder-tree"></i></a>
+            </div>           
+            <div class="nav-item" data-tooltip="Contact">
+                <a href="#contact"><i class="fas fa-phone"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="emoji">🚀</div>
+                <h1>ITS ME, MARC!</h1>
+                <p>Your Enthusiastic Software Engineer</p>
+                <span class="subtext">Building user-friendly programs, Prioritizing your satisfaction.</span>
+        
+                <!-- Add your picture below -->
+                <div class="hero-image">
+                    <img src="images/mypic.jpg" alt="Marc Vincent Encina">
+                </div>
+            </div>
+        </section>
+    
+        <div class="spacer"></div>
+
+        <!-- About Section -->
+        <section id="about" class="content-box hidden-section">
+    <h2>About Me</h2>
+    <div class="about-container">
+        <div class="about-text">
+            <p>Hello! I am Marc Vincent Encina, a passionate Software Engineer. With a strong passion for programming, I create innovative and dynamic web solutions and software.</p>
+            <br><br>
+            <p>My coding journey began in my first year of college, where I quickly developed a deep interest in the logical aspect of programming. Since then, I've explored various languages and technologies, gaining hands-on experience in building web applications and systems.</p>       
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-item"><img src="images/html.png" alt="HTML"><span>HTML</span></div>
+            <div class="skill-item"><img src="images/css.png" alt="CSS"><span>CSS</span></div>
+            <div class="skill-item"><img src="images/javascript.png" alt="JavaScript"><span>JavaScript</span></div>
+            <div class="skill-item"><img src="images/python.png" alt="Python"><span>Python</span></div>
+            <div class="skill-item"><img src="images/dotnet.png" alt=".NET"><span>.NET</span></div>
+            <div class="skill-item"><img src="images/java.png" alt="Java"><span>Java</span></div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Services Section -->
+        <div class="spacer"></div>
+        <section id="services" class="hidden-section">
+            <h2>Services</h2>
+            <div class="service-box"><i class="fas fa-globe service-icon"></i><div class="service-text"><h3>Web Development</h3><p>Custom-built websites with modern, responsive designs.</p></div></div>
+            <div class="service-box"><i class="fas fa-laptop-code service-icon"></i><div class="service-text"><h3>Software Development</h3><p>Efficient and scalable software solutions tailored to your needs.</p></div></div>
+            <div class="service-box"><i class="fas fa-tachometer-alt service-icon"></i><div class="service-text"><h3>System Optimization</h3><p>Improving system performance for better efficiency.</p></div></div>
+            <div class="spacer"></div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="content-box hidden-section">
+            <h2>Sample Projects</h2>
+            <br><br>
+        
+            <div class="projects-gallery">
+                <div class="project-item">
+                    <img src="images/pos.png" alt="POS System">
+                    <p>POS System</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/homepage.png" alt="Homepage Design">
+                    <p>Homepage Design</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/projectsamp1.jpg" alt="Project Sample 1">
+                    <p>Space Fighter</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/projectsamp2.jpg" alt="Project Sample 2">
+                    <p>PDF to Audio converter and translator</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <div class="spacer"></div>
+        <section id="contact">
+            <h2>CONTACT ME</h2>
+            <p>Let's connect! Reach out for inquiries, collaborations, or just a friendly chat.</p>
+            
+            <form action="send_mail.php" method="POST">
+                <div class="form-group">
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                    <input type="text" name="surname" placeholder="Surname (optional)">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                </div>
+                <textarea name="message" placeholder="Message" required></textarea>
+                
+                <button type="submit">Submit ➤</button>
+            </form>
+        </section>
+        
+    
+        <div class="spacer"></div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".hidden-section");
+
+            function revealSections() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (sectionTop < windowHeight - 100) { // Adjust trigger point
+                        section.classList.add("visible");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", revealSections);
+            revealSections(); // Run on load in case some sections are already visible
+        });
+    </script>
+
+</body>
+</html>
